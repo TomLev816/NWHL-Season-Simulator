@@ -1,6 +1,6 @@
+#NWHL 2018-2019
+
 import random
-
-
 
 class team_stats(object):
   def __init__(self, teamname, wins, loses, ties, gf, ga):
@@ -14,14 +14,14 @@ class team_stats(object):
     self.ga = ga
     
     
-NYR = team_stats("Rangers", 0,0,0,0,0)
-NYI = team_stats("Islanders", 0,0,0,0,0)
-NJD = team_stats("Devils", 0,0,0,0,0)
-PHI = team_stats("Flyers", 0,0,0,0,0)
-PIT = team_stats("Pittsburgh", 0,0,0,0,0)
-CAR = team_stats("Hurricanes", 0,0,0,0,0)
+RIV = team_stats("Riveters", 0,0,0,0,0)
+CTW = team_stats("Whale", 0,0,0,0,0)
+BUF = team_stats("Beauts", 0,0,0,0,0)
+BOS = team_stats("Pride", 0,0,0,0,0)
+MIN = team_stats("Whitecaps", 0,0,0,0,0)
 
-all_teams = (NYR, NYI, NJD, PHI, PIT, CAR)
+
+all_teams = (RIV, CTW, BUF, BOS, MIN)
 
 class player_stats(object):
   def __init__(self, team, name, pos, age, shot, off, dfnce, gtend, goals, saves):
@@ -39,48 +39,41 @@ class player_stats(object):
     
 # team, name, pos, age, shot, off, defence, goalie, Goals, Saves
 
-player1 = player_stats("Rangers", "Megan", "C", 24,7,8,7,0,0,0)
-player2 = player_stats("Rangers", "Brianna", "W", 29,6,8,2,0,0,0)
-player3 = player_stats("Rangers", "Amanda", "W", 34,5,4,4,0,0,0)
-player4 = player_stats("Rangers", "Kacey", "D", 27,8,2,6,0,0,0)
-player5 = player_stats("Rangers", "Lee", "D",22,5,9,8,0,0,0)
-player6 = player_stats("Rangers", "Alex", "G", 27,0,0,0,20,0,0)
+player1 = player_stats("Riveters", "Madison Packer", "C", 24,9,9,7,0,0,0)
+player2 = player_stats("Riveters", "Miye D'Oench", "W", 29,7,8,7,0,0,0)
+player3 = player_stats("Riveters", "Rebecca Russo", "W", 34,6,4,7,0,0,0)
+player4 = player_stats("Riveters", "Kelsey koelzer", "D", 27,5,7,9,0,0,0)
+player5 = player_stats("Riveters", "Courtney Burke", "D",22,3,7,8,0,0,0)
+player6 = player_stats("Riveters", "Katie Fitzgerald", "G", 27,0,0,0,22,0,0)
 
-player11 = player_stats("Islanders", "Kate", "C", 24,7,2,3,0,0,0)
-player12 = player_stats("Islanders", "Jean", "W", 29,6,6,5,0,0,0)
-player13 = player_stats("Islanders", "Samatha", "W", 34,5,4,3,0,0,0)
-player14 = player_stats("Islanders", "Elena", "D", 27,6,6,5,0,0,0)
-player15 = player_stats("Islanders", "Kelli", "D",22,2,4,7,0,0,0)
-player16 = player_stats("Islanders", "April", "G", 27,0,0,0,16,0,0)
+player11 = player_stats("Whale", "Emily Fluke", "C", 24,4,6,4,0,0,0)
+player12 = player_stats("Whale", "Meghan Huertas", "W", 29,3,5,4,0,0,0)
+player13 = player_stats("Whale", "Kelly Babstock", "W", 34,1,6,2,0,0,0)
+player14 = player_stats("Whale", "Amanda Boulier", "D", 27,4,6,4,0,0,0)
+player15 = player_stats("Whale", "Emma Greco", "D",22,1,4,5,0,0,0)
+player16 = player_stats("Whale", "Sydney Rossman", "G", 27,0,0,0,19,0,0)
 
-player21 = player_stats("Devils", "Natalie", "C", 24,3,6,4,0,0,0)
-player22 = player_stats("Devils", "Emily", "W", 29,5,5,2,0,0,0)
-player23 = player_stats("Devils", "Haley", "W", 34,5,4,4,0,0,0)
-player24 = player_stats("Devils", "Jocelyne", "D", 27,7,4,7,0,0,0)
-player25 = player_stats("Devils", "Laura", "D",22,7,6,9,0,0,0)
-player26 = player_stats("Devils", "Shannon", "G", 27,0,0,0,16,0,0)
+player21 = player_stats("Beauts", "Hayley Scamurra", "C", 24,7,7,5,0,0,0)
+player22 = player_stats("Beauts", "Maddie Elia", "W", 29,1,7,5,0,0,0)
+player23 = player_stats("Beauts", "Kristin Lewicki", "W", 34,5,5,6,0,0,0)
+player24 = player_stats("Beauts", "Lisa Chesson", "D", 27,2,4,7,0,0,0)
+player25 = player_stats("Beauts", "Sarah Casorso", "D",22,1,6,6,0,0,0)
+player26 = player_stats("Beauts", "Amanda Leveille", "G", 27,0,0,0,22,0,0)
 
 
-player31 = player_stats("Flyers", "Dora", "C", 25,2,6,7,0,0,0)
-player32 = player_stats("Flyers", "Jane", "W", 23,6,8,4,0,0,0)
-player33 = player_stats("Flyers", "Judy", "W", 27,5,2,6,0,0,0)
-player34 = player_stats("Flyers", "Karla", "D", 27,8,2,6,0,0,0)
-player35 = player_stats("Flyers", "Sheri", "D",25,1,6,6,0,0,0)
-player36 = player_stats("Flyers", "Tammy", "G", 25,0,0,0,16,0,0)
+player31 = player_stats("Pride", "Jillian Dempsey", "C", 25,7,7,4,0,0,0)
+player32 = player_stats("Pride", "Sydney Daniels", "W", 23,3,6,4,0,0,0)
+player33 = player_stats("Pride", "Emily Field", "W", 27,2,6,3,0,0,0)
+player34 = player_stats("Pride", "Alyssa Gagliardi", "D", 27,3,5,7,0,0,0)
+player35 = player_stats("Pride", "Kaleigh Fratkin", "D",25,1,5,6,0,0,0)
+player36 = player_stats("Pride", "Brittany Ott", "G", 25,0,0,0,21,0,0)
 
-player41 = player_stats("Penguins", "Shannon", "C", 24,4,4,4,0,0,0)
-player42 = player_stats("Penguins", "Elsa", "W", 29,8,6,6,0,0,0)
-player43 = player_stats("Penguins", "Eva", "W", 27,4,7,4,0,0,0)
-player44 = player_stats("Penguins", "Lindsey", "D", 27,6,5,7,0,0,0)
-player45 = player_stats("Penguins", "Kristina", "D",22,3,7,7,0,0,0)
-player46 = player_stats("Penguins", "Jana", "G", 27,0,0,0,15,0,0)
-
-player51 = player_stats("Hurricanes", "Cathy", "C", 24,9,3,5,0,0,0)
-player52 = player_stats("Hurricanes", "Hattie", "W", 29,4,5,2,0,0,0)
-player53 = player_stats("Hurricanes", "Blanche", "W", 34,5,6,3,0,0,0)
-player54 = player_stats("Hurricanes", "Casey", "D", 27,4,5,9,0,0,0)
-player55 = player_stats("Hurricanes", "Karen", "D",22,4,5,8,0,0,0)
-player56 = player_stats("Hurricanes", "Diane", "G", 27,0,0,0,19,0,0)
+player41 = player_stats("Whitecaps", "Bray Ketchum", "C", 24,1,6,7,0,0,0)
+player42 = player_stats("Whitecaps", "Taylor Accursi", "W", 29,6,6,2,0,0,0)
+player43 = player_stats("Whitecaps", "Jess Jones", "W", 27,4,6,2,0,0,0)
+player44 = player_stats("Whitecaps", "Jenny Ryan", "D", 27,4,7,7,0,0,0)
+player45 = player_stats("Whitecaps", "Ashley Johnston", "D",22,2,2,9,0,0,0)
+player46 = player_stats("Whitecaps", "Brianna Laing", "G", 27,0,0,0,14,0,0)
 
 
 team_01 = [player1, player2, player3, player4, player5, player6]
@@ -88,14 +81,14 @@ team_02 = [player11, player12, player13, player14, player15, player16]
 team_03 = [player21, player22, player23, player24, player25, player26]
 team_04 = [player31, player32, player33, player34, player35, player36]
 team_05 = [player41, player42, player43, player44, player45, player46]
-team_06 = [player51, player52, player53, player54, player55, player56]
+
 
 games = 0
 while games < 100:
   #Choosing teams
   loop = True
   while loop:
-    teams = ["NYR", "NYI", "NJD","PHI", "PIT", "CAR"]
+    teams = ["RIV", "CTW", "BUF","BOS", "MIN"]
     for once in teams: 
       print (once)
     print
@@ -103,7 +96,7 @@ while games < 100:
     print()
     print()
     
-    if userteam == "NYR" or "MON" or "DET" or "BOS" or "TOR" or "CHI":
+    if userteam == "RIV" or "MON" or "DET" or "BOS" or "TOR" or "CHI":
       break
     else:
       print ("Follow the instructions")
@@ -111,7 +104,7 @@ while games < 100:
 
   loop = True
   while loop:
-    teamscomp = ["NYR", "NYI", "NJD","PHI", "PIT", "CAR"]
+    teamscomp = ["RIV", "CTW", "BUF","BOS", "MIN"]
     teamscomp.remove(userteam)
     for once in teamscomp: 
       print (once)
@@ -120,45 +113,35 @@ while games < 100:
     print()
     print()
     
-    if teamcomp == "NYR" or "MON" or "DET" or "BOS" or "TOR" or "CHI":
+    if teamcomp == "RIV" or "MON" or "DET" or "BOS" or "TOR" or "CHI":
       break
     else:
       print ("Follow the instructions")
 
   the_team = userteam
-  if the_team == "NYR":
+  if the_team == "RIV":
     teama = team_01
-  elif the_team == "NYI":
+  elif the_team == "CTW":
     teama = team_02
-  elif the_team == "NJD":
+  elif the_team == "BUF":
     teama = team_03
-  elif the_team == "PHI":
+  elif the_team == "BOS":
     teama = team_04
-  elif the_team == "PIT":
+  elif the_team == "MIN":
     teama = team_05
-  elif the_team == "CAR":
-    teama = team_06
-        
+          
   the_team = teamcomp
-  if the_team == "NYR":
+  if the_team == "RIV":
     teamb = team_01
-  elif the_team == "NYI":
+  elif the_team == "CTW":
     teamb = team_02
-  elif the_team == "NJD":
+  elif the_team == "BUF":
     teamb = team_03
-  elif the_team == "PHI":
+  elif the_team == "BOS":
     teamb = team_04
-  elif the_team == "PIT":
+  elif the_team == "MIN":
     teamb = team_05
-  elif the_team == "CAR":
-    teamb = team_06      
-
-  # whos playing
-  #teama = team_01
-  #teamb = team_05
-
-
-
+    
   # scores teams off
   def team_off(player_list):
       team_off = 0
@@ -348,10 +331,10 @@ while games < 100:
   print()
 
 
-  again = input("Would you like to play another game? Y/N ").upper()
+  again = input("Would you like to stop playing? Y/N ").upper()
   if again == "Y":
-    games += 1
+    break
   else:
-    break  
+    games += 1  
 
     
