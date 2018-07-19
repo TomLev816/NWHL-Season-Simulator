@@ -1,6 +1,8 @@
 #NWHL 2018-2019
 
 import random
+import pandas as pd
+import numpy as np
 
 class team_stats(object):
   def __init__(self, teamname, wins, loses, ties, gf, ga):
@@ -39,48 +41,73 @@ class player_stats(object):
     
 # team, name, pos, age, shot, off, defence, goalie, Goals, Saves
 
-player1 = player_stats("Riveters", "Madison Packer", "C", 24,9,9,7,0,0,0)
-player2 = player_stats("Riveters", "Miye D'Oench", "W", 29,7,8,7,0,0,0)
-player3 = player_stats("Riveters", "Rebecca Russo", "W", 34,6,4,7,0,0,0)
-player4 = player_stats("Riveters", "Kelsey koelzer", "D", 27,5,7,9,0,0,0)
-player5 = player_stats("Riveters", "Courtney Burke", "D",22,3,7,8,0,0,0)
-player6 = player_stats("Riveters", "Katie Fitzgerald", "G", 27,0,0,0,22,0,0)
+player101 = player_stats("Riveters", "Madison Packer", "C", 27,9,9,7,0,0,0)
+player102 = player_stats("Riveters", "Bray Ketchum", "C", 29,5,6,4,0,0,0)
+player103 = player_stats("Riveters", "Alexa Gruschow", "W", 24,8,6,6,0,0,0)
+player104 = player_stats("Riveters", "Amanda Kessel", "W", 26,5,8,8,0,0,0)
+player105 = player_stats("Riveters", "Rebecca Russo", "W", 24,8,4,3,0,0,0)
+player106 = player_stats("Riveters", "Miye D'Oench", "W", 24,8,7,3,0,0,0)
+player107 = player_stats("Riveters", "Courtney Burke", "D",23,3,8,8,0,0,0)
+player108 = player_stats("Riveters", "Jenny Ryan", "D",23,1,7,4,0,0,0)
+player109 = player_stats("Riveters", "Kiira Dosdall", "D",30,1,6,7,0,0,0)
+player110 = player_stats("Riveters", "Kelsey koelzer", "D", 23,6,5,9,0,0,0)
+player111 = player_stats("Riveters", "Katie Fitzgerald", "G", 24,0,0,0,23,0,0)
 
-player11 = player_stats("Whale", "Emily Fluke", "C", 24,4,6,4,0,0,0)
-player12 = player_stats("Whale", "Meghan Huertas", "W", 29,3,5,4,0,0,0)
-player13 = player_stats("Whale", "Kelly Babstock", "W", 34,1,6,2,0,0,0)
-player14 = player_stats("Whale", "Amanda Boulier", "D", 27,4,6,4,0,0,0)
-player15 = player_stats("Whale", "Emma Greco", "D",22,1,4,5,0,0,0)
-player16 = player_stats("Whale", "Sydney Rossman", "G", 27,0,0,0,19,0,0)
+player201 = player_stats("Whale", "Emily Fluke", "C", 25,4,6,4,0,0,0)
+player202 = player_stats("Whale", "Sam Faber", "C", 31,3,5,6,0,0,0)
+player203 = player_stats("Whale", "Jamie Goldsmith", "W", 27,4,6,7,0,0,0)
+player204 = player_stats("Whale", "Kelly Babstock", "W", 25,4,7,4,0,0,0)
+player205 = player_stats("Whale", "Sam Donovan", "W", 25,4,7,4,0,0,0)
+player206 = player_stats("Whale", "Meghan Huertas", "W", 25,5,7,6,0,0,0)
+player207 = player_stats("Whale", "Amanda Boulier", "D", 25,4,6,7,0,0,0)
+player208 = player_stats("Whale", "Emma Greco", "D",22,1,4,5,0,0,0)
+player209 = player_stats("Whale", "Shannon Doyle", "D",22,1,5,7,0,0,0)
+player210 = player_stats("Whale", "Cydney Roesler", "D",22,2,3,8,0,0,0)
+player211 = player_stats("Whale", "Sydney Rossman", "G", 27,0,0,0,19,0,0)
 
-player21 = player_stats("Beauts", "Hayley Scamurra", "C", 24,7,7,5,0,0,0)
-player22 = player_stats("Beauts", "Maddie Elia", "W", 29,1,7,5,0,0,0)
-player23 = player_stats("Beauts", "Kristin Lewicki", "W", 34,5,5,6,0,0,0)
-player24 = player_stats("Beauts", "Lisa Chesson", "D", 27,2,4,7,0,0,0)
-player25 = player_stats("Beauts", "Sarah Casorso", "D",22,1,6,6,0,0,0)
-player26 = player_stats("Beauts", "Amanda Leveille", "G", 27,0,0,0,22,0,0)
-
-
-player31 = player_stats("Pride", "Jillian Dempsey", "C", 25,7,7,4,0,0,0)
-player32 = player_stats("Pride", "Sydney Daniels", "W", 23,3,6,4,0,0,0)
-player33 = player_stats("Pride", "Emily Field", "W", 27,2,6,3,0,0,0)
-player34 = player_stats("Pride", "Alyssa Gagliardi", "D", 27,3,5,7,0,0,0)
-player35 = player_stats("Pride", "Kaleigh Fratkin", "D",25,1,5,6,0,0,0)
-player36 = player_stats("Pride", "Brittany Ott", "G", 25,0,0,0,21,0,0)
-
-player41 = player_stats("Whitecaps", "Bray Ketchum", "C", 24,1,6,7,0,0,0)
-player42 = player_stats("Whitecaps", "Taylor Accursi", "W", 29,6,6,2,0,0,0)
-player43 = player_stats("Whitecaps", "Jess Jones", "W", 27,4,6,2,0,0,0)
-player44 = player_stats("Whitecaps", "Jenny Ryan", "D", 27,4,7,7,0,0,0)
-player45 = player_stats("Whitecaps", "Ashley Johnston", "D",22,2,2,9,0,0,0)
-player46 = player_stats("Whitecaps", "Brianna Laing", "G", 27,0,0,0,14,0,0)
+player301 = player_stats("Beauts", "Hayley Scamurra", "C", 24,7,7,5,0,0,0)
+player302 = player_stats("Beauts", "Jordan Juron", "C", 24,6,6,4,0,0,0)
+player303 = player_stats("Beauts", "Maddie Elia", "W", 29,1,7,5,0,0,0)
+player304 = player_stats("Beauts", "Kristin Lewicki", "W", 34,6,5,6,0,0,0)
+player305 = player_stats("Beauts", "Dani Cameranesi", "W", 23,3,8,7,0,0,0)
+player306 = player_stats("Beauts", "Kourtney Kunichika", "W", 26,5,9,3,0,0,0)
+player307 = player_stats("Beauts", "Lisa Chesson", "D", 27,2,4,7,0,0,0)
+player308 = player_stats("Beauts", "Sarah Casorso", "D",22,1,6,6,0,0,0)
+player309 = player_stats("Beauts", "Emily Pfalzer", "D",25,3,7,9,0,0,0)
+player310 = player_stats("Beauts", "Sarah Edney", "D",25,3,7,9,0,0,0)
+player311 = player_stats("Beauts", "Amanda Leveille", "G", 27,0,0,0,22,0,0)
 
 
-team_01 = [player1, player2, player3, player4, player5, player6]
-team_02 = [player11, player12, player13, player14, player15, player16]
-team_03 = [player21, player22, player23, player24, player25, player26]
-team_04 = [player31, player32, player33, player34, player35, player36]
-team_05 = [player41, player42, player43, player44, player45, player46]
+player401 = player_stats("Pride", "Jillian Dempsey", "C", 25,7,7,4,0,0,0)
+player402 = player_stats("Pride", "Brianna Decker", "C", 27,9,9,5,0,0,0)
+player403 = player_stats("Pride", "Sydney Daniels", "W", 23,8,6,5,0,0,0)
+player404 = player_stats("Pride", "Emily Field", "W", 25,2,6,3,0,0,0)
+player405 = player_stats("Pride", "Haley Skarupa", "W", 24,7,8,3,0,0,0)
+player406 = player_stats("Pride", "Dana Trivigno", "W", 24,7,7,6,0,0,0)
+player407 = player_stats("Pride", "Alyssa Gagliardi", "D", 27,3,5,7,0,0,0)
+player408 = player_stats("Pride", "Kaleigh Fratkin", "D",25,1,5,6,0,0,0)
+player409 = player_stats("Pride", "Paige Harrington", "D",24,1,4,8,0,0,0)
+player410 = player_stats("Pride", "Meagan Mangene", "D",25,3,7,7,0,0,0)
+player411 = player_stats("Pride", "Brittany Ott", "G", 28,0,0,0,21,0,0)
+
+player501 = player_stats("Whitecaps", "Hannah Brandt", "C", 24,6,8,5,0,0,0)
+player502 = player_stats("Whitecaps", "Hillary Crowe", "C", 25,6,7,4,0,0,0)
+player503 = player_stats("Whitecaps", "Kendall Coyne", "W", 26,5,9,6,0,0,0)
+player504 = player_stats("Whitecaps", "Amy Menke", "W", 23,4,7,4,0,0,0)
+player505 = player_stats("Whitecaps", "Kathleen Frischmann", "W", 27,2,4,6,0,0,0)
+player506 = player_stats("Whitecaps", "Margo Lund", "W", 25,2,4,7,0,0,0)
+player507 = player_stats("Whitecaps", "Kelly Buchta", "D", 28,2,5,6,0,0,0)
+player508 = player_stats("Whitecaps", "Tanja Eisenschmid", "D",25,6,3,7,0,0,0)
+player509 = player_stats("Whitecaps", "Anna-Maria Fiegert", "D",24,2,4,5,0,0,0)
+player510 = player_stats("Whitecaps", "Emma Stauber", "D",25,3,7,8,0,0,0)
+player511 = player_stats("Whitecaps", "Julie Friend", "G", 25,0,0,0,17,0,0)
+
+
+team_01 = [player101, player102, player103, player104, player105, player106, player107, player108, player109, player110, player111]
+team_02 = [player201, player202, player203, player204, player205, player206, player207, player208, player209, player210, player211]
+team_03 = [player301, player302, player303, player304, player305, player306, player307, player308, player309, player310, player311]
+team_04 = [player401, player402, player403, player404, player405, player406, player407, player408, player409, player410, player411]
+team_05 = [player501, player502, player503, player504, player505, player506, player507, player508, player509, player510, player511]
 
 
 games = 0
@@ -186,7 +213,7 @@ while games < 100:
   
 
   
-  
+  '''
   print ("Team A")
   print (team_off_teama)
   print (team_dfnce_teama)
@@ -197,7 +224,7 @@ while games < 100:
   print (team_dfnce_teamb)
   print (team_b_goalie)
   print ()
-
+  '''
 
 
 
@@ -276,33 +303,32 @@ while games < 100:
   teamcomp_eval = eval(teamcomp)
   userteam_eval = eval(userteam)
   
+  userteam_eval.gf += goals_teama
+  userteam_eval.ga += goals_teamb
+  teamcomp_eval.gf += goals_teamb
+  teamcomp_eval.ga += goals_teama
+
   if goals_teama > goals_teamb:
     userteam_eval.wins += 1
-    userteam_eval.gf += goals_teama
-    userteam_eval.ga += goals_teamb
     teamcomp_eval.loses += 1
-    teamcomp_eval.gf += goals_teamb
-    teamcomp_eval.ga += goals_teama
   elif goals_teamb > goals_teama:
     userteam_eval.loses += 1
-    userteam_eval.gf += goals_teama
-    userteam_eval.ga += goals_teamb
     teamcomp_eval.wins += 1
-    teamcomp_eval.gf += goals_teamb
-    teamcomp_eval.ga += goals_teama
   else:
     userteam_eval.ties += 1
-    userteam_eval.gf += goals_teama
-    userteam_eval.ga += goals_teamb
     teamcomp_eval.ties += 1
-    teamcomp_eval.gf += goals_teamb
-    teamcomp_eval.ga += goals_teama
+    
+    
   
   print ("Team Name - GP - Wins - Loses - Ties - Points - GF - GA")
+  #data = pd.DataFrame([RIV.wins], columns=('Wins'))
+  #data.head()
 
   for i in all_teams:
     i = team_stats(i.teamname, i.wins,i.loses,i.ties,i.gf,i.ga)  
     print (i.teamname, " - ", i.gp," - ", i.wins," - ",i.loses," - ",i.ties," - ",i.points," - ",i.gf," - ",i.ga)
+    #data = pd.DataFrame({'Wins' : i.wins},index=i.teamname)
+    #data.head
     
   print()
 
@@ -313,7 +339,8 @@ while games < 100:
   #print (userteam, " Points: ", userteam_eval.points)
   #print (teamcomp, " Points: ", teamcomp_eval.points)
   #print()
-  #print (userteam, " Total Stats: ")
+  
+  print (userteam, " Total Stats: ")
   
   for players in teama:
     if players.pos == "G":
@@ -329,6 +356,8 @@ while games < 100:
       print (players.name, '-', players.pos, '-', players.goals)
   print()
   print()
+
+  
 
 
   again = input("Would you like to stop playing? Y/N ").upper()
