@@ -1,8 +1,6 @@
 #NWHL 2018-2019
 
 import random
-import pandas as pd
-import numpy as np
 import operator
 
 class team_stats(object):
@@ -271,8 +269,10 @@ def standings():
   
         
 def leagueleaders():
+    show = input('How many players do you wish to see? ')
+    num = eval(show)
     Scoring = sorted(allPlayers, key=lambda player: player.goals, reverse=True)
-    for players in Scoring[:10]:
+    for players in Scoring[:num]:
         print(players.name, '-', players.team, '-', players.pos, '-', players.goals)
     print()
 
@@ -327,14 +327,6 @@ def seasonMode():
 seasonMode()
 
 
-'''
-for i in range(20):
-    print ('Welcome to week', + (i+1))
-    start = input('Would you like to sim the week? Y/N ').upper()
-    simWeek(allGames)
-    standings()
-    leagueleaders()
-'''
 
 
 
