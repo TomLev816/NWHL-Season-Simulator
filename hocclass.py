@@ -77,7 +77,6 @@ player309 = player_stats("Beauts", "Emily Pfalzer", "D",25,3,7,9,0,0,0)
 player310 = player_stats("Beauts", "Sarah Edney", "D",25,3,7,9,0,0,0)
 player311 = player_stats("Beauts", "Amanda Leveille", "G", 27,0,0,0,22,0,0)
 
-
 player401 = player_stats("Pride", "Jillian Dempsey", "C", 25,7,7,4,0,0,0)
 player402 = player_stats("Pride", "Brianna Decker", "C", 27,9,9,5,0,0,0)
 player403 = player_stats("Pride", "Sydney Daniels", "W", 23,8,6,5,0,0,0)
@@ -123,7 +122,7 @@ while games < 100:
     print()
     print()
     
-    if userteam == "RIV" or "MON" or "DET" or "BOS" or "TOR" or "CHI":
+    if userteam == "RIV" or "CTW" or "BUF" or "BOS" or "MIN":
       break
     else:
       print ("Follow the instructions")
@@ -140,7 +139,7 @@ while games < 100:
     print()
     print()
     
-    if teamcomp == "RIV" or "MON" or "DET" or "BOS" or "TOR" or "CHI":
+    if teamcomp == "RIV" or "CTW" or "BUF" or "BOS" or "MIN":
       break
     else:
       print ("Follow the instructions")
