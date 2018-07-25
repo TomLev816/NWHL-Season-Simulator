@@ -52,7 +52,7 @@ player107 = player_stats("Riveters", "Courtney Burke", "D",23,3,8,8,0,0,0)
 player108 = player_stats("Riveters", "Jenny Ryan", "D",23,1,7,4,0,0,0)
 player109 = player_stats("Riveters", "Kiira Dosdall", "D",30,1,6,7,0,0,0)
 player110 = player_stats("Riveters", "Kelsey koelzer", "D", 23,6,5,9,0,0,0)
-player111 = player_stats("Riveters", "Katie Fitzgerald", "G", 24,0,0,0,23,0,0)
+player111 = player_stats("Riveters", "Katie Fitzgerald", "G", 24,0,0,0,25,0,0)
 
 player201 = player_stats("Whale", "Emily Fluke", "C", 25,4,6,4,0,0,0)
 player202 = player_stats("Whale", "Sam Faber", "C", 31,3,5,6,0,0,0)
@@ -64,7 +64,7 @@ player207 = player_stats("Whale", "Amanda Boulier", "D", 25,4,6,7,0,0,0)
 player208 = player_stats("Whale", "Emma Greco", "D",22,1,4,5,0,0,0)
 player209 = player_stats("Whale", "Shannon Doyle", "D",22,1,5,7,0,0,0)
 player210 = player_stats("Whale", "Cydney Roesler", "D",22,2,3,8,0,0,0)
-player211 = player_stats("Whale", "Sydney Rossman", "G", 27,0,0,0,19,0,0)
+player211 = player_stats("Whale", "Sydney Rossman", "G", 27,0,0,0,21,0,0)
 
 player301 = player_stats("Beauts", "Hayley Scamurra", "C", 24,7,7,5,0,0,0)
 player302 = player_stats("Beauts", "Jordan Juron", "C", 24,6,6,4,0,0,0)
@@ -76,7 +76,7 @@ player307 = player_stats("Beauts", "Lisa Chesson", "D", 27,2,4,7,0,0,0)
 player308 = player_stats("Beauts", "Sarah Casorso", "D",22,1,6,6,0,0,0)
 player309 = player_stats("Beauts", "Emily Pfalzer", "D",25,3,7,9,0,0,0)
 player310 = player_stats("Beauts", "Sarah Edney", "D",25,3,7,9,0,0,0)
-player311 = player_stats("Beauts", "Shannon Szabados", "G", 31,0,0,0,25,0,0)
+player311 = player_stats("Beauts", "Shannon Szabados", "G", 31,0,0,0,27,0,0)
 
 player401 = player_stats("Pride", "Jillian Dempsey", "C", 25,7,7,4,0,0,0)
 player402 = player_stats("Pride", "Brianna Decker", "C", 27,9,9,5,0,0,0)
@@ -88,7 +88,7 @@ player407 = player_stats("Pride", "Alyssa Gagliardi", "D", 27,3,5,7,0,0,0)
 player408 = player_stats("Pride", "Kaleigh Fratkin", "D",25,1,5,6,0,0,0)
 player409 = player_stats("Pride", "Paige Harrington", "D",24,1,4,8,0,0,0)
 player410 = player_stats("Pride", "Meagan Mangene", "D",25,3,7,7,0,0,0)
-player411 = player_stats("Pride", "Brittany Ott", "G", 28,0,0,0,21,0,0)
+player411 = player_stats("Pride", "Brittany Ott", "G", 28,0,0,0,23,0,0)
 
 player501 = player_stats("Whitecaps", "Hannah Brandt", "C", 24,6,8,5,0,0,0)
 player502 = player_stats("Whitecaps", "Hillary Crowe", "C", 25,6,7,4,0,0,0)
@@ -100,7 +100,7 @@ player507 = player_stats("Whitecaps", "Kelly Buchta", "D", 28,2,5,6,0,0,0)
 player508 = player_stats("Whitecaps", "Tanja Eisenschmid", "D",25,6,3,7,0,0,0)
 player509 = player_stats("Whitecaps", "Anna-Maria Fiegert", "D",24,2,4,5,0,0,0)
 player510 = player_stats("Whitecaps", "Emma Stauber", "D",25,3,7,8,0,0,0)
-player511 = player_stats("Whitecaps", "Julie Friend", "G", 25,0,0,0,17,0,0)
+player511 = player_stats("Whitecaps", "Julie Friend", "G", 25,0,0,0,19,0,0)
 
 
 Riveters = [player101, player102, player103, player104, player105, player106, player107, player108, player109, player110, player111]
@@ -180,7 +180,7 @@ def game(teama,teamStatA, teamb,teamStatB):
         per += 1
         #print ("Start of period", per )
         #print ("Goals by:")
-        poss_in_per = random.randint(30,50)
+        poss_in_per = random.randint(30,48)
         poss = 0
         while poss < poss_in_per:
             turnover = 0
@@ -279,12 +279,20 @@ def standings():
   
         
 def leagueleaders():
-    show = input('How many players do you wish to see? ')
-    num = eval(show)
-    Scoring = sorted(allPlayers, key=lambda player: player.goals, reverse=True)
-    for players in Scoring[:num]:
-        print(players.name, '-', players.team, '-', players.pos, '-', players.goals)
-    print()
+    print ('[1] \t Goalies')
+    print ('[2] \t Skaters')
+    select = input('Please select Goalies or Skaters:  ')
+    if select == '1':
+        for players in allPlayers:
+            if players.pos == "G":
+                print (players.name, '---', players.team, '---', players.pos, '-', players.saves)
+    else:
+        show = input('How many players do you wish to see? ')
+        num = eval(show)
+        Scoring = sorted(allPlayers, key=lambda player: player.goals, reverse=True)
+        for players in Scoring[:num]:
+            print(players.name, '-', players.team, '-', players.pos, '-', players.goals)
+        print()
 
 def simWeek(gameList):
     for i in gameList[:2]:
@@ -306,7 +314,7 @@ allGames = [[Beauts, 'BUF', Whitecaps, 'MIN'],[Pride, 'BOS', Whale, 'CTW'],[Rive
 
 def seasonMode():
     weekIn = 0
-    while weekIn < 20:
+    while weekIn < 21:
         print ()
         print ('Welcome to the NWHL Season Simulator menu:')
         print ('[1] \t Standings')
@@ -328,9 +336,14 @@ def seasonMode():
         elif choice == '5':
             break
         else:
-            print ('Week ' , (weekIn + 1) , ' Results')
-            simWeek(allGames)
-            weekIn +=1
+            if weekIn == 20:
+                break
+            else:
+                print ('Week ' , (weekIn + 1) , ' Results')
+                simWeek(allGames)
+                weekIn +=1
+    
+     
         
 #Opens and runs the game
 seasonMode()
