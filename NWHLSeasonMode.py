@@ -248,14 +248,24 @@ def game(teama,teamStatA, teamb,teamStatB):
 
 
 def viewRoster():
-    teams = ["Riveters", "Whale", "Beauts","Pride", "Whitecaps"]
+    teams = ["[1] \t Riveters", "[2] \t Whale", "[3] \t Beauts","[4] \t Pride", "[5] \t Whitecaps"]
     for once in teams: 
       print (once)
     print ()  
-    chosenTeam = input("Please choose team from above: ")
-    team = eval(chosenTeam)
+    chosenTeam = input("Please choose number from above: ")
+    if chosenTeam == '1':
+        team = Riveters
+    elif chosenTeam == '2':
+        team = Whale
+    elif chosenTeam == '3':
+        team = Beauts
+    elif chosenTeam == '4':
+        team = Pride
+    else:
+        team = Whitecaps 
+    print ("Name \t\t Age-Pos-Ovr-Goals-Saves")
     for players in team:
-        print(players.name, '-', players.age, '-', players.pos, '-', players.overall, '-', players.goals, '-', players.saves)
+        print(players.name, '\t', players.age, '-', players.pos, '-', players.overall, '-', players.goals, '-', players.saves)
   
 
 def standings():
@@ -322,8 +332,7 @@ def seasonMode():
             simWeek(allGames)
             weekIn +=1
         
-
-
+#Opens and runs the game
 seasonMode()
 
 
